@@ -1,0 +1,18 @@
+confluence:
+  image: arpdocker/confluence-jdk
+  restart: always
+  links:
+    - postgres
+  volumes:
+    - ~/confluence/home:/opt/confluence-home
+  ports:
+    - 8090:8090
+
+postgres:
+  image: postgres
+  restart: always
+  environment:
+    - POSTGRES_USER=confluence
+    - POSTGRES_PASSWORD=confluence
+  volumes:
+    - ~/confluence/data:/var/lib/postgresql/data

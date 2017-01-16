@@ -29,5 +29,6 @@
 
 	<modules>
 		<module>debian-jdk</module>
+		<module>confluence-jdk</module>
 	</modules>
 </project>
